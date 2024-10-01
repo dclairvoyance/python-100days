@@ -62,12 +62,18 @@ while active:
                 while (sum(dealer_cards) < 17):
                     dealer_cards.append(random.choice(cards))
                     cards.remove(dealer_cards[-1])
+                    if (sum(dealer_cards) > 21 and 11 in dealer_cards):
+                        dealer_cards.remove(11)
+                        dealer_cards.append(1)
                 check_status(my_cards, dealer_cards)
                 print(f"Your final hand: {my_cards}, final score: {sum(my_cards)}")
                 print(f"Dealer's final hand: {dealer_cards}, final score: {sum(dealer_cards)}")
             else:
                 my_cards.append(random.choice(cards))
                 cards.remove(my_cards[-1])
+                if (sum(my_cards) > 21 and 11 in my_cards):
+                    my_cards.remove(11)
+                    my_cards.append(1)
                 print(f"\nYour hand: {my_cards}, current score: {sum(my_cards)}")
                 print(f"Dealer's hand: [{dealer_cards[0]}, ?]")
     

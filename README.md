@@ -9,3 +9,7 @@ Another attempt to complete a Udemy course I enrolled in when I started universi
 ## References
 
 Here's the [course](https://www.udemy.com/course/100-days-of-code/?couponCode=ST15MT100124A) if you're interested to follow along.
+
+## Disclaimer
+
+Since this is just for fun and for myself, functionality is more important than best practices.
