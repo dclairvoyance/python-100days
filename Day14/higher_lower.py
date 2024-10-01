@@ -3,9 +3,9 @@ from game_data import data
 
 score = 0
 active = True
+data_a = random.choice(data)
 
 while active:
-    data_a = random.choice(data)
     data_b = random.choice(data)
     while data_a == data_b:
         data_b = random.choice(data)
@@ -29,6 +29,7 @@ while active:
     if guess == correct or correct == "x":
         print(f"You're right. Current score: {score}.")
         score += 1
+        data_a = data_b
         print()
     else:
         print(f"Sorry, that's wrong. Final score: {score}.")
