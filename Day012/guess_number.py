@@ -19,10 +19,16 @@ while attempts > 0:
     print()
     print(f"You have {attempts} attempts remaining to guess the number.")
     print(f"Range: {low} to {high}.")
-    guess = int(input("Make a guess: "))
-    while guess < 1 or guess > 100:
-        print("Invalid.")
-        guess = int(input("Make a guess: "))
+
+    while True:
+        try:
+            guess = int(input("Make a guess: "))
+            while guess < 1 or guess > 100:
+                print("Invalid.")
+                guess = int(input("Make a guess: "))
+            break
+        except ValueError:
+            print("Please enter int only.")
     
     if guess == number:
         print(f"\nYou got it! The answer was {number}.")

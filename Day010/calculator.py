@@ -30,14 +30,26 @@ operators = {
     "/": divide
 }
 
-num1 = float(input("What's the first number? "))
+while True:
+    try:
+        num1 = float(input("What's the first number? "))
+        break
+    except ValueError:
+        print("Please enter float only.")
 
 while active:
     operator = input("Pick an operation: ")
     while operator not in operators:
         print("Invalid.")
         operator = input("Pick an operation: ")
-    num2 = float(input("What's the next number? "))
+
+    while True:
+        try:
+            num2 = float(input("What's the next number? "))
+            break
+        except ValueError:
+            print("Please enter float only.")
+
     # result = eval(num1, operator, num2)
     result = operators[operator](num1, num2)
     print(f"{num1} {operator} {num2} = {result}")

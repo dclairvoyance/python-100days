@@ -29,6 +29,8 @@ word = random.choice(word_list).lower()
 letter_dict = dict.fromkeys(string.ascii_lowercase, 0)
 life = 6
 
+print("Welcome to Hangman!")
+
 display_status()
 
 while life > 0:

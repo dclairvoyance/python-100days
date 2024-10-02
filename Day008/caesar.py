@@ -19,7 +19,12 @@ while active:
 
     text = input("Type your message: ").lower()
 
-    shift = int(input("Type the shift number: "))
+    while True:
+        try:
+            shift = int(input("Type the shift number: "))
+            break
+        except ValueError:
+            print("Please enter int only.")
 
     if key == "encode":
         encoded = caesar(text, shift, key)

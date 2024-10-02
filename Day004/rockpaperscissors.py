@@ -3,17 +3,17 @@
 import random
 
 moves = ["Rock", "Paper", "Scissors"]
+
+print("Welcome to Rock, Paper, Scissors.")
 while True:
     try:
         move = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
-    except ValueError:
-        print("int only")
-        continue
-    if (move > 2 or move < 0):
-        print("0, 1, or 2 only")
-        continue
-    else:
+        while move < 0 or move > 2:
+            print("0, 1, or 2 only.")
+            move = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
         break
+    except ValueError:
+        print("Please enter int only.")
 
 bot_move = random.randint(0, 2)
 
